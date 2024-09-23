@@ -2,48 +2,77 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
-body{
+body {
     background-color: hsl(212, 45%, 89%);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     font-family: "Outfit", system-ui;
-    font-optical-sizing: auto;
-    font-style: normal;
 }
 
-.card h3{
-    font-weight: 700;
-    font-size: 25px;
-}
-    
-.card{
+.card {
     background-color: hsl(0, 0%, 100%);
     border: 1px solid #e0e0e0;
     border-radius: 15px;
-    padding: 15px;
-    width: 320px;
-    height: 520px;
+    padding: 20px;
+    width: 90%; /* Set width relative to viewport for responsiveness */
+    max-width: 320px; /* Maximum width for larger devices */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
+.card h3 {
+    font-weight: 700;
+    font-size: 16px; /* Start with a smaller font size */
+    padding: 10px 0; /* Add padding for spacing */
+}
+
 img {
-    width: 100%;
-    height: 300px;
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 10px;
 }
 
 p {
     color: hsl(216, 15%, 48%);
     font-weight: 400;
-    font-size: 15px;
+    font-size: 14px; /* Slightly smaller font size for mobile */
 }
 
-.card-text{
+.card-text {
     padding-top: 15px;
 }
-    
+
+/* Media Queries */
+
+@media (min-width: 768px) {
+    .card {
+        max-width: 320px; /* Fixed width for larger devices */
+    }
+
+    .card h3 {
+        font-size: 25px; /* Larger font size for readability */
+    }
+
+    p {
+        font-size: 15px; /* Adjust font size for readability */
+    }
+}
+
+@media (min-width: 1440px) {
+    body {
+        font-size: 16px; /* Increase base font size for desktop */
+    }
+
+    .card {
+        width: 320px; /* Set fixed width for desktop */
+        padding: 20px;
+    }
+
+    img {
+        height: 300px; /* Fixed height for better control */
+    }
+}
